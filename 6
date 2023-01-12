@@ -1,0 +1,48 @@
+Problem
+Given an array of  integers
+
+You have to transform the array, for every : 
+
+For example: if the given array is 3,4,5 then after the transformation the array will be 1,0,1
+
+
+Your task is to convert the array into a palindrome and for that you can re-arrange the elements however you wish
+
+Is it possible to convert the array into a palindrome?
+
+
+Input :
+The first line contains , the number of test cases 
+The second line contains , the number of array elements 
+The third line contains  integers, the array elements 
+
+
+Output:
+For all test cases print  if the array can be converted into a palindrome or else print 
+
+Sample Input
+2
+3 
+1 5 7
+6
+1 2 3 3 3 3
+Sample Output
+1
+0
+-----------------------------------------------------------------------
+SOLUTION:-
+
+
+n=int(input())
+for i in range(n):
+    v=[]
+    a=int(input())
+    b=list(map(int,input().split()))
+    for i in b:
+        v.append(i%2)
+    o=v.count(1)
+    z=v.count(0)
+    if (o%2!=0 or z%2!=0) and (len(v)%2==0) and (o>=1 or z>=1):
+        print("0")
+    else:
+        print("1")
